@@ -42,6 +42,10 @@ new customer
                     <td>{{d.contact_number}}</td>
                     <td>{{d.whatsapp_number}}</td>
                     <td>{{d.reffered_by}}</td>
+                    <td><a href="{% url 'update_customer' d.id %}" class="btn btn-sm btn-primary">Update</a></td>
+                    <td><a href="" class="btn btn-sm btn-primary">Delete</a></td>
+
+
                   </tr>
                   {% endfor %}
                   
