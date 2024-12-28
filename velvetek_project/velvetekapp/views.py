@@ -70,7 +70,7 @@ def update_customer(request, customer_id):
         customer.address = address
         customer.contact_number = contact_number
         customer.whatsapp_number = whatsapp
-        customer.referred_by = referred_by
+        customer.reffered_by = referred_by
         customer.save()
 
         messages.success(request, "Customer updated successfully!")
