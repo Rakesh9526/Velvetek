@@ -43,7 +43,10 @@ new customer
                     <td>{{d.whatsapp_number}}</td>
                     <td>{{d.reffered_by}}</td>
                     <td><a href="{% url 'update_customer' d.id %}" class="btn btn-sm btn-primary">Update</a></td>
-                    <td><a href="" class="btn btn-sm btn-primary">Delete</a></td>
+                    <form action="{% url 'delete_customer' d.id %}" method="post">
+                      {% csrf_token %}
+                      <td><button type="submit" class="btn btn-sm btn-danger">Delete</button></td>
+                    </form>
 
 
                   </tr>

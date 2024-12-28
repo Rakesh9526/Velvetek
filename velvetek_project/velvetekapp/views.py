@@ -79,6 +79,17 @@ def update_customer(request, customer_id):
     return render(request, 'update_customer.html', {'customer': customer})
 
 
+
+def delete_customer(request, customer_id):
+    if request.method == "POST":
+        try:
+            Customer.objects.get(id=customer_id).delete()
+            return redirect('new_customer')  
+        except Customer.DoesNotExist:
+            return redirect('new_customer')
+
+
+
 def new_customer(request):
     dict_user={
         'customers':Customer.objects.all()
